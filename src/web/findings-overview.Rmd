@@ -1,23 +1,28 @@
 ---
-title: "Findings Overview"
+title: "Residential Property Values Analysis"
 
 ---
-# QA
-- chart of codes 
-- explain that
 
-## NLP
-###*Co-Occurance*
+# Literature Review
+x
 
-![](www/co-occurence.png)
+# Exploratory Data Analysis of CoreLogic Property Tax Data
+x
 
-###*Topic Modeling*
+### Sales Price vs Assessed Price Correlation
+x
 
-![ ](www/topic_model.png)
+# Project Area Selection
+x
 
+# Model
+x
 
-###*tf-idf*
-####*Term Frequency Inverse Document Frequency*
-![ ](www/tf_idf.png)
+### Data Cleaning
+x
 
+### Variable Selection
+x
 
+### Conclusion
+x
