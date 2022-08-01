@@ -3,10 +3,42 @@ title: "Team"
 ---
 
 # Interns
-![Skylar Haskiell](www/skylar_pic.jpg)  
+![Kristian Olsson](www/kristian.jpeg){width=40% }</center>    
 
-## *Skylar Haskiell*
-Skylar is a rising third year at the University of Virginia pursuing a B.S. in Computer Science. 
+## *Kristian Olsson*
+Data Science for the Public Good Intern
+<br>
+Kristian is a rising third year at the University of Virginia pursuing majors in Mathematics and Statistics.
 
-## *Jillian Eberhart*
-Jillian is a rising third year at the Univerisity of Virginia pursuing a B.A. in Statistics with a minor in Health and Wellness. 
+![Donovan Cates](www/donovan.jpg){width=40% }</center>    
+## *Donovan Cates*
+Data Science for the Public Good Intern
+<br>
+Donovan is a rising fourth year at the University of Virginia pursuing majors in Mathematics and Economics.
+
+# Faculty and Staff
+
+
+![Aritra Halder](www/aritra.png){width=40% }</center>    
+
+## *Aritra Halder*
+Research Assistant Professor
+<br>
+
+![Joshua Goldstein](www/josh.png){width=40% }</center>    
+
+## *Joshua Goldstein*
+Research Assistant Professor
+<br>
+
+![Hanna Charankevich](www/hanna.png){width=40% }</center>    
+
+## *Hanna Charankevich*
+Postdoctoral Research Associate
+<br>
+
+![Neil Kattampallil](www/neil.png){width=40% }</center>    
+
+## *Neil Kattampallil*
+Research Scientist
+<br>
