@@ -362,28 +362,137 @@ div.tocify {
 </div>
 
 
+<p><a href="https://wayback.archive-it.org/18816/20220223125200/https:/federalreporter.nih.gov/FileDownload">Federal RePORTER</a></p>
 <div id="literature-review" class="section level1">
 <h1>Literature Review</h1>
-<p>x</p>
+<p>We conducted a literature review of journals that analyzed the effects of high-speed internet access and property prices.</p>
+<div id="home-is-where-the-internet-is-high-speed-internets-impact-on-rural-housing-values" class="section level4">
+<h4>Home Is Where the Internet Is? High-speed Internet’s Impact on Rural Housing Values</h4>
+<div id="kelsey-l.-conley-and-brian-e.-whitacre" class="section level5">
+<h5>Kelsey L. Conley and Brian E. Whitacre</h5>
+<p>This report uses data from the National Broadband Map, the Federal Communications Commission, and over 2,700 housing transactions from June 2011 to June 2017 to examine the impact of broadband availability on housing values in two rural Oklahoma counties via a hedonic price model. The results find no support for the existence of a broadband premium, and stress that differences across counties are crucial in assessing rural housing prices. The full report can be found at <a href="https://doi.org/10.1177/0160017620918652">this link</a>.</p>
+</div>
+</div>
+<div id="high-speed-internet-access-and-housing-values" class="section level4">
+<h4>High-speed Internet access and housing values</h4>
+<div id="gabor-molnar-scott-j.-savage-and-douglas-c.-sicker" class="section level5">
+<h5>Gabor Molnar, Scott J. Savage, and Douglas C. Sicker</h5>
+<p>This report uses a hedonic regression model that relates house values to high-speed Internet access while controlling for the potential endogeneity of Internet access. Results show that single-family homes with access to a 25 Mbps broadband connection have a price that is about $5,977, or 3%, more than similar homes in neighborhoods with 1 Mbps. The rural premium is lower at $5,099. The full report can be found at <a href="https://doi.org/10.1080/00036846.2019.1631443">this link</a>.</p>
+</div>
+</div>
 </div>
 <div id="exploratory-data-analysis-of-corelogic-property-tax-data" class="section level1">
 <h1>Exploratory Data Analysis of CoreLogic Property Tax Data</h1>
-<p>x</p>
+<p><img src="www/Website/CL_EDA.png" alt="EDA of CoreLogic" /> <img src="www/Website/CL_EDA_highlights.png" alt="EDA of CoreLogic with highlights" /></p>
 <div id="sales-price-vs-assessed-price-correlation" class="section level3">
 <h3>Sales Price vs Assessed Price Correlation</h3>
 <p>x</p>
 </div>
+<div id="project-area-selection" class="section level2">
+<h2># Project Area Selection</h2>
 </div>
-<div id="project-area-selection" class="section level1">
-<h1>Project Area Selection</h1>
-<p>x</p>
+<div id="counts-of-properties-inout-project-area-and-beforeafter-project-implementation" class="section level2">
+<h2>Counts of Properties In/Out Project Area and Before/After Project Implementation</h2>
+<pre class="r"><code>state8_counts &lt;- read.csv(&quot;www/state8_counts&quot;)
+state8_counts[,2:8]</code></pre>
+<pre><code>##         BIP_ID tot_in_20m tot_out_20m bef_in_20m bef_out_20m aft_in_20m
+## 1  AR1102-AG39        196       25762          0          45        196
+## 2   CA1107-B40       3450      231602          0        1984       3450
+## 3   CA1110-A40          0      208662          0          59          0
+## 4   CA1112-A40          0       84220          0          12          0
+## 5   CA1113-A40     112620     2390368          8        1099     112620
+## 6   CA1114-A40      49153     6635504          4        2583      49153
+## 7   CA1115-A40      17844       62734          1           0      17844
+## 8   CO1106-A40       1747       63464          0          42       1747
+## 9   CO1107-A40       2846      930471          3          46       2846
+## 10  CO1108-B39      35731      206466          3           7      35731
+## 11  CO1109-A40         89       73694          0          12         89
+## 12  CO1110-A40         49        4954          0           0         49
+## 13  CO1114-A40         77       52637          0          12         77
+## 14  FL1105-A40      18569     2888348         57       21243      18512
+## 15  GA1105-A40       7199      453800         13         614       7186
+## 16  GA1107-A40          8       97332          0           7          8
+## 17  GA1109-C40       2201       12151          4           7       2201
+## 18  NC1103-A40          0      466492          0         398          0
+## 19  NC1105-A40          0      110710          0           0          0
+## 20  NC1106-A40      16579      385708          0          20      16579
+## 21  NC1107-B40      16892      486199          0        1075      16892
+## 22  NC1108-A40       8872      522083          0          39       8872
+## 23  NC1109-A40      15140     1322566          0         150      15140
+## 24  NC1110-A40          0       65805          0           9          0
+## 25  OH1106-A40      22048     2891452        910       44797      21138
+## 26  OH1107-A40       1147      241801          0           1       1147
+## 27  OH1108-A40      56058     2834094          0          34      56058
+## 28  OH1110-B40      12447      243845          0           4      12447
+## 29  OH1111-A40       1095      242735          0           2       1095
+## 30  TX1113-A40        394      385529          0        6926        394
+## 31  TX1116-A40          0          50          0           0          0
+## 32  TX1119-A40         36      356593          0           0         36
+## 33  TX1120-A40       1774      238414          0           3       1774
+## 34  TX1122-A40          9       12347          0           0          9
+##    aft_out_20m
+## 1        25717
+## 2       229618
+## 3       208662
+## 4        84220
+## 5      2390368
+## 6      6635504
+## 7        62734
+## 8        63422
+## 9       930471
+## 10      206466
+## 11       73694
+## 12        4954
+## 13       52637
+## 14     2867105
+## 15      453186
+## 16       97332
+## 17       12151
+## 18      466094
+## 19      110710
+## 20      385708
+## 21      486199
+## 22      522083
+## 23     1322566
+## 24       65805
+## 25     2846655
+## 26      241801
+## 27     2834094
+## 28      243845
+## 29      242735
+## 30      378603
+## 31          50
+## 32      356593
+## 33      238414
+## 34       12347</code></pre>
+<img src="www/Website/contingency_before.png" style="width:80.0%" />
+</center>
+<p><img src="www/Rplot.png" style="width:80.0%" /></right> <img src="www/Website/map_before.png" style="width:80.0%" /></right></p>
+</div>
 </div>
 <div id="model" class="section level1">
 <h1>Model</h1>
-<p>x ###Data Cleaning x</p>
+<div id="data-cleaning" class="section level3">
+<h3>Data Cleaning</h3>
+</div>
 <div id="variable-selection" class="section level3">
 <h3>Variable Selection</h3>
-<p>x</p>
+</div>
+<div id="variable-manipulation" class="section level3">
+<h3>Variable Manipulation</h3>
+<div id="dummy-variables" class="section level4">
+<h4>Dummy Variables</h4>
+</div>
+<div id="factor-variables" class="section level4">
+<h4>Factor Variables</h4>
+<p><img src="www/Website/bedrooms.png" alt="bedrooms" style="width:45.0%" /></left> <img src="www/Website/factor_bedrooms.png" alt="factor_bedrooms" style="width:45.0%" /></right> <img src="www/Website/total_baths_calculated.png" alt="total_baths_calculated" style="width:45.0%" /></left> <img src="www/Website/factor_total_baths_calculated.png" alt="factor_total_baths_calculated" style="width:45.0%" /></right> <img src="www/Website/number_of_units.png" alt="number_of_units" style="width:45.0%" /></left> <img src="www/Website/factor_number_of_units.png" alt="factor_number_of_units" style="width:45.0%" /></right> <img src="www/Website/stories_number.png" alt="stories_number" style="width:45.0%" /></left> <img src="www/Website/factor_stories_number.png" alt="factor_stories_number" style="width:45.0%" /></right></p>
+</div>
+</div>
+<div id="final-model" class="section level3">
+<h3>Final Model</h3>
+<img src="www/Website/contingency_after.png" style="width:80.0%" />
+</center>
+<p><img src="www/Website/map_after.png" style="width:80.0%" /></right></p>
 </div>
 <div id="conclusion" class="section level3">
 <h3>Conclusion</h3>
