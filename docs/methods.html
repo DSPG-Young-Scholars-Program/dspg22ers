@@ -362,13 +362,24 @@ div.tocify {
 </div>
 
 
-<div id="variable-selection" class="section level1">
-<h1>Variable Selection</h1>
-<p>x</p>
+
+<div id="exploratory-data-analysis" class="section level1">
+<h1>Exploratory Data Analysis</h1>
+In order to determine which project area we would analyze, we looked at the number of Ookla observations for some of the most populous project areas funded in 2017, and used the region with the most consistently high counts of Ookla tests in order to ensure we had a sample size large enough to proceed. The reason we chose 2017 as the year of funding was to increase the probability that the project was in the process of being implemented between the years over which Ookla data was collected. <br> <img src="www/download_wv1406a23.png" alt="Download Speeds Over Time" style="width:40.0%" />
+</center>
+<br> <img src="www/upload_wv1406a23.png" alt="Upload Speeds Over Time" style="width:40.0%" />
+</center>
+<br> <img src="www/latency_wv1406a23.png" alt="Latency Periods Over Time" style="width:40.0%" />
+</center>
+<p><br></p>
 </div>
-<div id="calculation-methods" class="section level1">
-<h1>Calculation Methods</h1>
-<p>x</p>
+<div id="variable-selection-and-methods" class="section level1">
+<h1>Variable Selection and Methods</h1>
+<p>Three linear models were created; one for each of download speeds, upload speeds, and latency periods. For each, we looked at the log of the value in order to correct for right-skewed data. In addition to time, proportion of the Ookla tile in the project area, and the interaction between the two, we also included various tract level demographic data which had potential to influence internet speeds in the area, such as median income. <br> All tract level data was pulled from the American Community Survey for the year 2015 to ensure the data was collected before the infrastructure grant had the opportunity to affect such demographics. After potential variables of interest were identified, a step function utilizing AIC was implemented to bring out only the most significant variables.</p>
+</div>
+<div id="models" class="section level1">
+<h1>Models</h1>
+
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
