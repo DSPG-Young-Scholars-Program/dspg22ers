@@ -456,7 +456,7 @@ state8_counts[,2:8]</code></pre>
 ## 33      238414
 ## 34       12347</code></pre>
 <p>Broadband Initiative Project OH1106-A40 is one of the few project areas that has sufficient data from this specific CoreLogic dataset, so our analysis will be based upon the properties and their prices and characteristics within this project area. The OH1106-A40 project shapefile and plot of properties inside (green) and outside (orange) are presented below.</p>
-<p><img src="www/RPLOT.png" style="width:60.0%" /></left> <img src="www/mapbefore.png" style="width:60.0%" /></right></p>
+<p><img src="www/Rplot.png" style="width:60.0%" /></left> <img src="www/map_before.png" style="width:60.0%" /></right></p>
 </div>
 <div id="model" class="section level1">
 <h1>Model</h1>
@@ -465,7 +465,7 @@ state8_counts[,2:8]</code></pre>
 <div id="dependent-variable-sales-price-vs-assessed-price" class="section level4">
 <h4>Dependent Variable: Sales Price vs Assessed Price</h4>
 <p>Our initial analysis was focused on assessing changes in property prices using the sale value as the dependent variable. However, the data of sales values are largely incomplete with a completeness percentage of 65.90% as shown by the exploratory data analysis in the Data page. We shifted our dependent variable from sale value to the assessed values of the properties. The assessed values are calculated by county-level tax offices that conduct these assessments on a regular basis, varying by tax office. The assessed values had a completeness percentage of 99.41%, ensuring that our analysis could use most of the data. <br> <br> To establish that assessed values could serve as a good proxy for sales values within Ohio, we calculated the correlation between the medians and means of the two variables at the ZIP code level by year. We removed ZIP codes that had less than 40 observations within a given year. The correlation between the median and mean values were both strong and positive, with a correlation coefficient of 0.938 and 0.961, respectively. We plotted these points and overlayed it with a LOESS (locally weighted smoothing) regression shown below. We can confidently use assessed prices as the dependent variable of our analysis.</p>
-<p><img src="www/ohiomedian.png" alt="median" style="width:45.0%" /></left> <img src="www/ohiomean.png" alt="mean" style="width:45.0%" /></right></p>
+<p><img src="www/ohiomedian.png" style="width:40.0%" /></left> <img src="www/ohiomean.png" style="width:40.0%" /></right></p>
 </div>
 <div id="independent-variable-manipulation" class="section level4">
 <h4>Independent Variable Manipulation</h4>
@@ -511,7 +511,7 @@ state8_counts[,2:8]</code></pre>
 <p>After selecting and manipulating the variables, duplicated and incomplete property observations were deleted. Our final dataset had 137558 observations, compared to 289184 before the data was cleaned. The distribution of these properties by inside/outside the project area and before/after project implementation are shown in the contingency matrices below.</p>
 <img src="www/Website/contingency_before.png" style="width:80.0%" />
 </center>
-<img src="www/Website/contingency_after.png" style="width:80.0%" />
+<img src="www/Website/contingency_after.png" style="width:100.0%" />
 </center>
 </div>
 </div>

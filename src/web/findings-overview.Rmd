@@ -26,7 +26,7 @@ state8_counts[,2:8]
 ```
 Broadband Initiative Project OH1106-A40 is one of the few project areas that has sufficient data from this specific CoreLogic dataset, so our analysis will be based upon the properties and their prices and characteristics within this project area. The OH1106-A40 project shapefile and plot of properties inside (green) and outside (orange) are presented below. 
 
-![](www/RPLOT.png){width=60%}</left> ![](www/mapbefore.png){width=60%}</right> 
+![](www/Rplot.png){width=60%}</left> ![](www/map_before.png){width=60%}</right> 
 
 # Model
 
@@ -38,7 +38,7 @@ Our initial analysis was focused on assessing changes in property prices using t
 <br>
 To establish that assessed values could serve as a good proxy for sales values within Ohio, we calculated the correlation between the medians and means of the two variables at the ZIP code level by year. We removed ZIP codes that had less than 40 observations within a given year. The correlation between the median and mean values were both strong and positive, with a correlation coefficient of 0.938 and 0.961, respectively. We plotted these points and overlayed it with a LOESS (locally weighted smoothing) regression shown below. We can confidently use assessed prices as the dependent variable of our analysis.
 
-![median](www/ohiomedian.png){width=45%}</left>  ![mean](www/ohiomean.png){width=45%}</right>
+![](www/ohiomedian.png){width=40%}</left> ![](www/ohiomean.png){width=40%}</right>
 
 #### Independent Variable Manipulation
 ##### Age (age)
@@ -77,11 +77,23 @@ The next interaction variables are distance_after_interaction and distance_in_af
 #### Data Cleaning
 After selecting and manipulating the variables, duplicated and incomplete property observations were deleted. Our final dataset had 137558 observations, compared to 289184 before the data was cleaned. The distribution of these properties by inside/outside the project area and before/after project implementation are shown in the contingency matrices below.
 
-![](www/Website/contingency_before.png){width=80%}</center> ![](www/Website/contingency_after.png){width=80%}</center> 
+![](www/Website/contingency_before.png){width=80%}</center> 
+![](www/Website/contingency_after.png){width=90%}</center> 
 
 ### Final Model
+With the variables mentioned above, we created two log-linear models with the dependent variable of assessed property values. The model to the left uses main effect variables dummy_out_in, dummy_before_after, and dummy_in_after_interaction. The main variable coefficient to consider is the dummy_in_after_interaction coefficient of -0.01409, which is 0.986 when exponentiated. This signals that homes inside the project area after the project implemention had a lower property value by 1.4%. However, this is the only variable in the model with an insignificant p-value, denoting that no significant conclusion can be made.
+<br>
+The model on the right uses dummy_before_after, distance_miles, distance_after_interaction, and distance_in_after_interaction. The main variable coefficient to consider is the distance_in_after_interaction coefficient of -1.17e-05, which is 0.999 when exponentiated. This denotes that home that were inside the project area and after project implementation had a lower property value by 0.1%, showing almost no effect. Unlike the first model, this main effect variable is significant to the model. 
+<br>
+In both models, housing characteristics have strong influences on the property homes. Properties with fireplaces and higher numbers of bedrooms, bathrooms, units, stories, living area, and land area had a housing premium. On the other hand, properties that were older, classified as mobile homes, and had a higher living area to land area ratio had lower property values. 
+<br>
+The outputs are given below.
+
 ![](www/dummy.png){width=45%}</left> ![](www/distance.png){width=45%}</right> 
 
-
 ### Conclusion
-x
+This project sought to determine if the implementation of broadband in rural areas would effect the property values of homes in said areas. Our analysis focused specifically on Broadband Initiative Project OH1106-A40. From the two models above, we can infer that there was no significant difference between the property values of homes that were inside of the project area versus outside of the project area after the project was implemented. Housing characteristics such as age, size, and the number of bedrooms/bathrooms in the property were significant indicators of the property value. 
+
+### Next Steps
+This analysis revolved around a specific project area, which we would like to use as a model to extrapolate to other project areas in the Broaband Initiative Project and other broaband projects more generally. We would also like to implement further modeling techniques such as the spatial regression model and difference in differences model mentioned in the overview page. 
+
