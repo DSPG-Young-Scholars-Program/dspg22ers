@@ -380,25 +380,9 @@ div.tocify {
 </div>
 </div>
 </div>
-<<<<<<< HEAD
-<div id="exploratory-data-analysis-of-corelogic-property-tax-data" class="section level1">
-<h1>Exploratory Data Analysis of CoreLogic Property Tax Data</h1>
-<p><img src="/home/kno5cac/git/dspg-ers/src/web/www/Website/CL_EDA.png" alt="EDA of CoreLogic" /> <img src="/home/kno5cac/git/dspg-ers/src/web/www/Website/CL_EDA_highlights.png" alt="EDA of CoreLogic with highlights" /></p>
-<div id="sales-price-vs-assessed-price-correlation" class="section level3">
-<h3>Sales Price vs Assessed Price Correlation</h3>
-<p>x</p>
-</div>
-</div>
-<div id="project-area-selection" class="section level1">
-<h1>Project Area Selection</h1>
-<p>t</p>
-<p>The BIP projects shown below represent a subset of the 132 BIP projects for which the data was</p>
-<p>The CoreLogic data</p>
-=======
 <div id="project-area-selection" class="section level1">
 <h1>Project Area Selection</h1>
 <p>For this analysis, we used a subset of the CoreLogic data, which included data for the eight states with the highest number of properties in the data: Arkansas, California, Colorado, Florida, Georgia, North Carolina, Ohio, and Texas. To select the project area for our analysis, we calculated the counts of properties inside the project area and outside the project area by a radius of 20 miles, both before and after the project was implemented. This was completed by correlating the latitude/longitude of each property to the project shapefiles and finding the properties that intersected using the sf package in R. The counts are presented in the table below for a subset of the 132 BIP projects that were present in one of the eight states in the CoreLogic data.</p>
->>>>>>> 05ca5b8e07c71cfb01f156cd146ea33552b2b9c3
 <pre class="r"><code>state8_counts &lt;- read.csv(&quot;www/state8_counts&quot;)
 state8_counts[,2:8]</code></pre>
 <pre><code>##         BIP_ID tot_in_20m tot_out_20m bef_in_20m bef_out_20m aft_in_20m
@@ -471,23 +455,11 @@ state8_counts[,2:8]</code></pre>
 ## 32      356593
 ## 33      238414
 ## 34       12347</code></pre>
-<<<<<<< HEAD
-<img src="www/Website/contingency_before.png" style="width:80.0%" />
-</center>
-<p><img src="www/Rplot.png" style="width:80.0%" /></right> <img src="www/Website/map_before.png" style="width:80.0%" /></right></p>
-</div>
-<div id="model" class="section level1">
-<h1>Model</h1>
-<div id="data-cleaning" class="section level3">
-<h3>Data Cleaning</h3>
-</div>
-=======
 <p>Broadband Initiative Project OH1106-A40 is one of the few project areas that has sufficient data from this specific CoreLogic dataset, so our analysis will be based upon the properties and their prices and characteristics within this project area. The OH1106-A40 project shapefile and plot of properties inside (green) and outside (orange) are presented below.</p>
 <p><img src="www/Rplot.png" style="width:60.0%" /></left> <img src="www/map_before.png" style="width:60.0%" /></right></p>
 </div>
 <div id="model" class="section level1">
 <h1>Model</h1>
->>>>>>> 05ca5b8e07c71cfb01f156cd146ea33552b2b9c3
 <div id="variable-selection" class="section level3">
 <h3>Variable Selection</h3>
 <div id="dependent-variable-sales-price-vs-assessed-price" class="section level4">
@@ -539,17 +511,22 @@ state8_counts[,2:8]</code></pre>
 <p>After selecting and manipulating the variables, duplicated and incomplete property observations were deleted. Our final dataset had 137558 observations, compared to 289184 before the data was cleaned. The distribution of these properties by inside/outside the project area and before/after project implementation are shown in the contingency matrices below.</p>
 <img src="www/Website/contingency_before.png" style="width:80.0%" />
 </center>
-<img src="www/Website/contingency_after.png" style="width:100.0%" />
+<img src="www/Website/contingency_after.png" style="width:90.0%" />
 </center>
 </div>
 </div>
 <div id="final-model" class="section level3">
 <h3>Final Model</h3>
+<p>With the variables mentioned above, we created two log-linear models with the dependent variable of assessed property values. The model to the left uses main effect variables dummy_out_in, dummy_before_after, and dummy_in_after_interaction. The main variable coefficient to consider is the dummy_in_after_interaction coefficient of -0.01409, which is 0.986 when exponentiated. This signals that homes inside the project area after the project implemention had a lower property value by 1.4%. However, this is the only variable in the model with an insignificant p-value, denoting that no significant conclusion can be made. <br> The model on the right uses dummy_before_after, distance_miles, distance_after_interaction, and distance_in_after_interaction. The main variable coefficient to consider is the distance_in_after_interaction coefficient of -1.17e-05, which is 0.999 when exponentiated. This denotes that home that were inside the project area and after project implementation had a lower property value by 0.1%, showing almost no effect. Unlike the first model, this main effect variable is significant to the model. <br> In both models, housing characteristics have strong influences on the property homes. Properties with fireplaces and higher numbers of bedrooms, bathrooms, units, stories, living area, and land area had a housing premium. On the other hand, properties that were older, classified as mobile homes, and had a higher living area to land area ratio had lower property values. <br> The outputs are given below.</p>
 <p><img src="www/dummy.png" style="width:45.0%" /></left> <img src="www/distance.png" style="width:45.0%" /></right></p>
 </div>
 <div id="conclusion" class="section level3">
 <h3>Conclusion</h3>
-<p>x</p>
+<p>This project sought to determine if the implementation of broadband in rural areas would effect the property values of homes in said areas. Our analysis focused specifically on Broadband Initiative Project OH1106-A40. From the two models above, we can infer that there was no significant difference between the property values of homes that were inside of the project area versus outside of the project area after the project was implemented. Housing characteristics such as age, size, and the number of bedrooms/bathrooms in the property were significant indicators of the property value.</p>
+</div>
+<div id="next-steps" class="section level3">
+<h3>Next Steps</h3>
+<p>This analysis revolved around a specific project area, which we would like to use as a model to extrapolate to other project areas in the Broaband Initiative Project and other broaband projects more generally. We would also like to implement further modeling techniques such as the spatial regression model and difference in differences model mentioned in the overview page.</p>
 </div>
 </div>
 
