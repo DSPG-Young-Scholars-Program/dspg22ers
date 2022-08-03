@@ -4,11 +4,9 @@ title: "Ookla Speedtest Analysis"
 # Exploratory Data Analysis
 In order to determine which project area we would analyze, we looked at the number of Ookla observations for some of the most populous project areas funded in 2017, and used the region with the most consistently high counts of Ookla tests in order to ensure we had a sample size large enough to proceed. The reason we chose 2017 as the year of funding was to increase the probability that the project was in the process of being implemented between the years over which Ookla data was collected.
 <br>
-![Download Speeds Over Time](www/download_wv1406a23.png){width=40% }</center>  
-<br>
-![Upload Speeds Over Time](www/upload_wv1406a23.png){width=40% }</center>  
-<br>
-![Latency Periods Over Time](www/latency_wv1406a23.png){width=40% }</center>  
+![Download Speeds Over Time](www/download_wv1406a23.png){width=45%}</center>  
+![Upload Speeds Over Time](www/upload_wv1406a23.png){width=45%}</center>  
+![Latency Periods Over Time](www/latency_wv1406a23.png){width=45%}</center>  
 <br>
 
 # Variable Selection and Methods
@@ -17,6 +15,17 @@ Three linear models were created; one for each of download speeds, upload speeds
 All tract level data was pulled from the American Community Survey for the year 2015 to ensure the data was collected before the infrastructure grant had the opportunity to affect such demographics. After potential variables of interest were identified, a step function utilizing AIC was implemented to bring out only the most significant variables. 
 
 # Models
+
+## Model for Download Speeds 
+![Download Model](www/download_model.JPG){width=50%}</center>  
+<br>
+
+## Model for Upload Speeds 
+![Upload Model](www/upload_model.JPG){width=50%}</center>  
+<br>
+
+## Model For Latency
+![Latency Model](www/latency_model.JPG){width=50%}</center>  
 
 # Conclusion
 x

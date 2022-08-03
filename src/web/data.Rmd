@@ -21,8 +21,10 @@ The CoreLogic Property Tax Data is internally divided into two datasets with ass
 
 # Shapefiles
 Throughout the course of the project, we worked chiefly with data in the form of shapefiles. These files allowed us to calculate variables such as area, intersections, and distance. Below are some images of these shapefiles constructed using ggplot2. 
+
 ## Project Area Shapefiles
 This plot outlines the appearance of the project area we dealt with when looking at Ookla data as well as a 5 mile buffer around the region to which inside speeds were compared.
+<br>
 ![Project Area Buffer](www/WV-1406-A23_buffer.JPG){width=50% }</center>
 
 ## State Shapefiles
