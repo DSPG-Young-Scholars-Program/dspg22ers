@@ -2,6 +2,8 @@
 title: "Residential Property Values Analysis"
 
 ---
+<font size="3">
+
 
 # Literature Review
 We conducted a literature review of journals that analyzed the effects of high-speed internet access and property prices.\ 
