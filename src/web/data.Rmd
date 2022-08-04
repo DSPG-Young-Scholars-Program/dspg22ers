@@ -18,7 +18,7 @@ https://www.ookla.com/ookla-for-good/open-data
 
 The CoreLogic Property Tax Data is internally divided into two datasets with assessed years of 2006-2014 and 2019-2021, corresponding to the Broadband Initiative Program and Community Connect Project, respectively. Our initial analysis was focused on Community Connect, thus, the exploratory data analysis tables below of the numeric variables represent assessed dates from 2019-2021. 
 
-![EDA of CoreLogic](www/Website/CL_EDA_.png)
+![EDA of CoreLogic](www/CL_EDA_.png)
 <br>
 
 # Shapefiles
