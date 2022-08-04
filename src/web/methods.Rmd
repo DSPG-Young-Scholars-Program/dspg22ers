@@ -10,7 +10,7 @@ In order to determine which project area we would analyze, we looked at the numb
 <br>
 
 # Variable Selection and Methods
-Three linear models were created; one for each of download speeds, upload speeds, and latency periods. For each, we looked at the log of the value in order to correct for right-skewed data. In addition to time, proportion of the Ookla tile in the project area, and the interaction between the two, we also included various tract level demographic data which had the potential to influence internet speeds in the area, such as median income. 
+Three linear models were created; one for each of download speeds, upload speeds, and latency periods. For each, we looked at the log of the value in order to correct for right-skewed data. In addition to time, the proportion of the Ookla tile in the project area, and the interaction between the two, we also included various tract level demographic data which had the potential to influence internet speeds in the area, such as median income. 
 <br>
 All tract level data was pulled from the American Community Survey for the year 2015 to ensure the data were collected before the infrastructure grant had the opportunity to affect such demographics. After potential variables of interest were identified, a step function utilizing AIC was implemented to bring out only the most significant variables. 
 
@@ -33,4 +33,7 @@ We measured the natural log of the average latency in milliseconds.
 ![Latency Model](www/latency_model.JPG){width=50%}</center> (edited) 
 4:25
 ## Conclusion
-For each of the three metrics Ookla employs to measure internet quality, the step function recognized the effect of the program as an insignificant factor in determining the overall value of metric. This may be due to the program being incomplete as of the time of data collection.
+In each model, internet speed was shown to improve over time and to have been of higher quality outside the project area in general. These findings are consistent with the assumptions that internet would improve as technology advances and that this region is likely only receiving a grant due to its initially poor internet quality. 
+
+However, for each of the three metrics Ookla employs to measure internet quality, the typical measures of statistical significance recognized the effect of the program as an insignificant factor in determining the overall value of metric. In fact, in the latency model, the step function removed this variable altogether due to its lack of significance. This may be due to the program being incomplete as of the time of data collection. 
+
