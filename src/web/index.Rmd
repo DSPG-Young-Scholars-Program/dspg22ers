@@ -3,16 +3,15 @@ title: "Impacts of Broadband Development on Rural Property Values"
 ---
 
 
-
-![ ](www/black-logo.png)
-
-
 # **Goal**
-Evaluate the effectiveness of United States Department of Agriculture (USDA) broadband initatives with respect to rural property values and internet speed.
+Evaluate the effectiveness of United States Department of Agriculture (USDA) broadband initiatives with respect to rural property values and internet speed.
 <br>
-The USDA would like to quantify the impact of their investments into broadband infrastructure nationally. This study aims to devise novel statistical methodology that allow for broadband program evaluation. 
+The USDA would like to quantify the impact of its investments into broadband infrastructure nationally. This study aims to devise a novel statistical methodology that allows for broadband program evaluation. 
+<br>
+Our work on this project concerned the effect of broadband programs on two specific variables, internet speeds and assessed property values. 
 
-# **Project Sponsor**
+
+## **Project Sponsor**
 The sponsor of this project is the USDA Economic Research Service, and our stakeholder is John Pender, senior economist.
 
 # **Method**
