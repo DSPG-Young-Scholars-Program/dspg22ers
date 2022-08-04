@@ -5,12 +5,10 @@ title: "Impacts of Broadband Development on Rural Property Values"
 Broadband investment is a high priority for the Administration and Congress. The importance of broadband became more evident during the COVID pandemic. There has been little research on the economic impacts of broadband programs so this project aims to devise novel statistical methodology that allow for program evaluation. The programs that this analysis focuses on are the Broadband Initiatives Program and Community Connect program
 
 ## Broadband Initiatives Program
-The Broadband Initiatives Program is part of the American Recovery and Reinvestment Act of 2009, a $2.5 billion investment allocated U.S. Department of Agriculture’s Rural Utilities Service (RUS) to deploy broadband in rural areas. The Recovery Act requires that a minimum 75 percent of the funded area be rural areas that lack access to high speed broadband. In total, the program provided over $2.33 billion in grants and $1.19 billion in loans to 320 projects, totaling over $3.5 billion. This program has supported near 100,000 households and thousands of businesses. The property value analysis surrounds this program. 
+The Broadband Initiatives Program is part of the American Recovery and Reinvestment Act of 2009, a \$2.5 billion investment allocated U.S. Department of Agriculture’s Rural Utilities Service (RUS) to deploy broadband in rural areas. The Recovery Act requires that a minimum 75 percent of the funded area be rural areas that lack access to high speed broadband. In total, the program provided over \$2.33 billion in grants and \$1.19 billion in loans to 320 projects, totaling over $3.5 billion. This program has supported near 100,000 households and thousands of businesses. The property value analysis surrounds this program. 
 
 ## Community Connect 
 The Community Connect program provides financial assistance to in rural, economically-challenged communities that lack any existing broadband speed of at least 10 Mbps downstream and 1 Mbps upstream. The purpose of this program is to make differences “in the quality of life for people and businesses” with potential to tape into “Internet for jobs, education, healthcare, public safety, and community development.” Since 2013, this program has awarded more $160 million to over 80 project areas where 100k rural residents reside. The Ookla analysis surrounds this program.
- 
-![image](https://user-images.githubusercontent.com/106775690/182757617-1cbf0632-ccf4-49dc-ba15-1cfdc884972c.png)
 
 
 # **Goal**

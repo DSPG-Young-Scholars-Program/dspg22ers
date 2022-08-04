@@ -22,18 +22,23 @@ We measured the natural log of the average download speed in kilobits per second
 <br>
 ![Download Model](www/download_model.JPG){width=50%}</center>
 <br>
+
 ## Model for Upload Speeds
 We measured the natural log of the average upload speed in kilobits per second.
 <br>
 ![Upload Model](www/upload_model.JPG){width=50%}</center>
 <br>
+
 ## Model For Latency
 We measured the natural log of the average latency in milliseconds.
 <br>
-![Latency Model](www/latency_model.JPG){width=50%}</center> (edited) 
-4:25
-## Conclusion
-In each model, internet speed was shown to improve over time and to have been of higher quality outside the project area in general. These findings are consistent with the assumptions that internet would improve as technology advances and that this region is likely only receiving a grant due to its initially poor internet quality. 
+![Latency Model](www/latency_model.JPG){width=50%}</center> 
 
-However, for each of the three metrics Ookla employs to measure internet quality, the typical measures of statistical significance recognized the effect of the program as an insignificant factor in determining the overall value of metric. In fact, in the latency model, the step function removed this variable altogether due to its lack of significance. This may be due to the program being incomplete as of the time of data collection. 
+## Conclusion
+Overall, it seems that our model attributes most of the variation in internet quality to tract level demographic data. For example, the minority population and number of renters in an area were highly indicative of internet quality. This may be due to the fact that both of these variables tend to be higher in urban areas, where it is more profitable for companies to invest in improving internet. In each model, internet speed was also shown to improve over time and to have been of higher quality outside the project area in general. These findings are consistent with the assumptions that internet would improve as technology advances and that this region is likely only receiving a grant due to its initially poor internet quality. 
+
+However, for each of the three metrics Ookla employs to measure internet quality, the typical measures of statistical significance recognized the effect of the program as an insignificant factor in determining the overall value of metric. In fact, in the latency model, the step function removed this variable altogether due to its lack of significance. This apparent lack of program effectiveness may be due to the program being incomplete as of the time of data collection. 
+
+## Next Steps
+Nonetheless, we hope to be able to apply this methodology to other project areas with the larger goal of measuring the nationwide impact of these programs. If we were to implement this model again, we would start with a project which received funding at an earlier date. This selection would allow us to be more certain construction on the project was actually proceeding as Ookla data was collected. Additionally, going forward we would hope to implement spatial regression techniques to ensure that we are giving more weight to comparisons between Ookla tiles which are nearby each other.
 
