@@ -29,7 +29,7 @@ This plot outlines the appearance of the project area we dealt with when looking
 ## Ookla Shapefiles
 Here we haved plotted the Ookla tiles for which we have observations. The time period for this plot is the fourth quarter of 2021.
 <br>
-![Ookla Shapefiles](www/Ookla_shapefiles.JPG){width=50% }</center>
+![Ookla Shapefiles](www/project_area_and_buffer.png){width=50% }</center>
 
 ## State Shapefiles
 This plot illustrates the location and size of the project area in relation to surrounding states.
