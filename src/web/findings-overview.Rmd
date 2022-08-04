@@ -2,6 +2,8 @@
 title: "Residential Property Values Analysis"
 
 ---
+<font size="3">
+
 
 # Literature Review
 We conducted a literature review of journals that analyzed the effects of high-speed internet access and property prices.\ 
@@ -20,9 +22,10 @@ For this analysis, we used a subset of the CoreLogic data, which included data f
 ---
 Counts of Properties In/Out Project Area and Before/After Project Implementation
 ---
-```{r}
+
+```{r,results='asis'}
 state8_counts <- read.csv("www/state8_counts")
-state8_counts[,2:8]
+knitr::kable(state8_counts)
 ```
 Broadband Initiative Project OH1106-A40 is one of the few project areas that has sufficient data from this specific CoreLogic dataset, so our analysis will be based upon the properties and their prices and characteristics within this project area. The OH1106-A40 project shapefile and plot of properties inside (green) and outside (orange) are presented below. 
 
@@ -82,11 +85,11 @@ After selecting and manipulating the variables, duplicated and incomplete proper
 
 ### Final Model
 With the variables mentioned above, we created two log-linear models with the dependent variable of assessed property values. The model to the left uses main effect variables dummy_out_in, dummy_before_after, and dummy_in_after_interaction. The main variable coefficient to consider is the dummy_in_after_interaction coefficient of -0.01409, which is 0.986 when exponentiated. This signals that homes inside the project area after the project implemention had a lower property value by 1.4%. However, this is the only variable in the model with an insignificant p-value, denoting that no significant conclusion can be made.
-<br>
+<br> <br>
 The model on the right uses dummy_before_after, distance_miles, distance_after_interaction, and distance_in_after_interaction. The main variable coefficient to consider is the distance_in_after_interaction coefficient of -1.17e-05, which is 0.999 when exponentiated. This denotes that home that were inside the project area and after project implementation had a lower property value by 0.1%, showing almost no effect. Unlike the first model, this main effect variable is significant to the model. 
-<br>
+<br> <br>
 In both models, housing characteristics have strong influences on the property homes. Properties with fireplaces and higher numbers of bedrooms, bathrooms, units, stories, living area, and land area had a housing premium. On the other hand, properties that were older, classified as mobile homes, and had a higher living area to land area ratio had lower property values. 
-<br>
+<br> <br>
 The outputs are given below.
 
 ![](www/dummy.png){width=45%}</left> ![](www/distance.png){width=45%}</right> 

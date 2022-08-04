@@ -1,6 +1,9 @@
 ---
 title: "Ookla Speedtest Analysis"
+
 ---
+<font size="3">
+
 # Exploratory Data Analysis
 In order to determine which project area we would analyze, we looked at the number of Ookla observations for some of the most populous project areas funded in 2017, and used the region with the most consistently high counts of Ookla tests in order to ensure we had a sample size large enough to proceed. The reason we chose 2017 as the year of funding was to increase the probability that the project was in the process of being implemented between the years over which Ookla data was collected.
 <br>

@@ -362,6 +362,7 @@ div.tocify {
 </div>
 
 
+<p><font size="3"></p>
 <div id="ookla-speedtest-data" class="section level1">
 <h1>Ookla Speedtest Data</h1>
 Ookla collects data on the results of their Speedtest which is then made available publicly each quarter. This data is aggregated into tiles of roughly 600 by 600 square meters. With each tile, Ookla lists data on the average download and upload speeds as well as latency time. Additionally, Ookla provides information on the number tests run on each tile as well as the number of distinct devices on which tests were run, making it possible to weight each tile depending on how many devices were used to calculate average speeds. For our analysis of the effect of broadband grants on internet speeds we took a subset of Ookla data which was collected from the years 2019 to 2021 and was within a 5 mile buffer region around the project area of interest. <br> <img src="www/Ookla.JPG" alt="Ookla Speedtest Data" style="width:50.0%" />
@@ -373,7 +374,7 @@ Ookla collects data on the results of their Speedtest which is then made availab
 <div id="exploratory-data-analysis-of-corelogic-property-tax-data" class="section level4">
 <h4>Exploratory Data Analysis of CoreLogic Property Tax Data</h4>
 <p>The CoreLogic Property Tax Data is internally divided into two datasets with assessed years of 2006-2014 and 2019-2021, corresponding to the Broadband Initiative Program and Community Connect Project, respectively. Our initial analysis was focused on Community Connect, thus, the exploratory data analysis tables below of the numeric variables represent assessed dates from 2019-2021.</p>
-<p><img src="www/Website/CL_EDA_.png" alt="EDA of CoreLogic" /> <br></p>
+<p><img src="www/CL_EDA_.png" alt="EDA of CoreLogic" /> <br></p>
 </div>
 </div>
 <div id="shapefiles" class="section level1">
@@ -381,7 +382,7 @@ Ookla collects data on the results of their Speedtest which is then made availab
 <p>Throughout the course of the project, we worked chiefly with data in the form of shapefiles. These files allowed us to calculate variables such as area, intersections, and distance. Below are some images of these shapefiles constructed using ggplot2.</p>
 <div id="project-area-shapefiles" class="section level2">
 <h2>Project Area Shapefiles</h2>
-This plot outlines the appearance of the project area we dealt with when looking at Ookla data as well as a 5 mile buffer around the region to which inside speeds were compared. <br> <img src="www/WV-1406-A23_buffer.JPG" alt="Project Area Buffer" style="width:50.0%" />
+This plot outlines the appearance of the project area we dealt with when looking at Ookla data as well as a 5 mile buffer around the region to which inside speeds were compared. <br> <img src="www/project_area_and_buffer.png" alt="Project Area Buffer" style="width:50.0%" />
 </center>
 </div>
 <div id="ookla-shapefiles" class="section level2">
