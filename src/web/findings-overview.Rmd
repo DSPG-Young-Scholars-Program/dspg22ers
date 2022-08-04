@@ -22,9 +22,10 @@ For this analysis, we used a subset of the CoreLogic data, which included data f
 ---
 Counts of Properties In/Out Project Area and Before/After Project Implementation
 ---
-```{r}
+
+```{r,results='asis'}
 state8_counts <- read.csv("www/state8_counts")
-state8_counts[,2:8]
+knitr::kable(state8_counts)
 ```
 Broadband Initiative Project OH1106-A40 is one of the few project areas that has sufficient data from this specific CoreLogic dataset, so our analysis will be based upon the properties and their prices and characteristics within this project area. The OH1106-A40 project shapefile and plot of properties inside (green) and outside (orange) are presented below. 
 

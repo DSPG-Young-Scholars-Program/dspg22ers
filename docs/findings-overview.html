@@ -385,77 +385,363 @@ div.tocify {
 <h1>Project Area Selection</h1>
 <p>For this analysis, we used a subset of the CoreLogic data, which included data for the eight states with the highest number of properties in the data: Arkansas, California, Colorado, Florida, Georgia, North Carolina, Ohio, and Texas. To select the project area for our analysis, we calculated the counts of properties inside the project area and outside the project area by a radius of 20 miles, both before and after the broadband deployment project was implemented. This was completed by correlating the latitude/longitude of each property to the project shapefiles and finding the properties that intersected using the sf package in R. The counts are presented in the table below for a subset of the 132 BIP projects that were present in one of the eight states in the CoreLogic data.</p>
 <pre class="r"><code>state8_counts &lt;- read.csv(&quot;www/state8_counts&quot;)
-state8_counts[,2:8]</code></pre>
-<pre><code>##         BIP_ID tot_in_20m tot_out_20m bef_in_20m bef_out_20m aft_in_20m
-## 1  AR1102-AG39        196       25762          0          45        196
-## 2   CA1107-B40       3450      231602          0        1984       3450
-## 3   CA1110-A40          0      208662          0          59          0
-## 4   CA1112-A40          0       84220          0          12          0
-## 5   CA1113-A40     112620     2390368          8        1099     112620
-## 6   CA1114-A40      49153     6635504          4        2583      49153
-## 7   CA1115-A40      17844       62734          1           0      17844
-## 8   CO1106-A40       1747       63464          0          42       1747
-## 9   CO1107-A40       2846      930471          3          46       2846
-## 10  CO1108-B39      35731      206466          3           7      35731
-## 11  CO1109-A40         89       73694          0          12         89
-## 12  CO1110-A40         49        4954          0           0         49
-## 13  CO1114-A40         77       52637          0          12         77
-## 14  FL1105-A40      18569     2888348         57       21243      18512
-## 15  GA1105-A40       7199      453800         13         614       7186
-## 16  GA1107-A40          8       97332          0           7          8
-## 17  GA1109-C40       2201       12151          4           7       2201
-## 18  NC1103-A40          0      466492          0         398          0
-## 19  NC1105-A40          0      110710          0           0          0
-## 20  NC1106-A40      16579      385708          0          20      16579
-## 21  NC1107-B40      16892      486199          0        1075      16892
-## 22  NC1108-A40       8872      522083          0          39       8872
-## 23  NC1109-A40      15140     1322566          0         150      15140
-## 24  NC1110-A40          0       65805          0           9          0
-## 25  OH1106-A40      22048     2891452        910       44797      21138
-## 26  OH1107-A40       1147      241801          0           1       1147
-## 27  OH1108-A40      56058     2834094          0          34      56058
-## 28  OH1110-B40      12447      243845          0           4      12447
-## 29  OH1111-A40       1095      242735          0           2       1095
-## 30  TX1113-A40        394      385529          0        6926        394
-## 31  TX1116-A40          0          50          0           0          0
-## 32  TX1119-A40         36      356593          0           0         36
-## 33  TX1120-A40       1774      238414          0           3       1774
-## 34  TX1122-A40          9       12347          0           0          9
-##    aft_out_20m
-## 1        25717
-## 2       229618
-## 3       208662
-## 4        84220
-## 5      2390368
-## 6      6635504
-## 7        62734
-## 8        63422
-## 9       930471
-## 10      206466
-## 11       73694
-## 12        4954
-## 13       52637
-## 14     2867105
-## 15      453186
-## 16       97332
-## 17       12151
-## 18      466094
-## 19      110710
-## 20      385708
-## 21      486199
-## 22      522083
-## 23     1322566
-## 24       65805
-## 25     2846655
-## 26      241801
-## 27     2834094
-## 28      243845
-## 29      242735
-## 30      378603
-## 31          50
-## 32      356593
-## 33      238414
-## 34       12347</code></pre>
+knitr::kable(state8_counts)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X</th>
+<th align="left">BIP_ID</th>
+<th align="right">tot_in_20m</th>
+<th align="right">tot_out_20m</th>
+<th align="right">bef_in_20m</th>
+<th align="right">bef_out_20m</th>
+<th align="right">aft_in_20m</th>
+<th align="right">aft_out_20m</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">AR1102-AG39</td>
+<td align="right">196</td>
+<td align="right">25762</td>
+<td align="right">0</td>
+<td align="right">45</td>
+<td align="right">196</td>
+<td align="right">25717</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">CA1107-B40</td>
+<td align="right">3450</td>
+<td align="right">231602</td>
+<td align="right">0</td>
+<td align="right">1984</td>
+<td align="right">3450</td>
+<td align="right">229618</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">CA1110-A40</td>
+<td align="right">0</td>
+<td align="right">208662</td>
+<td align="right">0</td>
+<td align="right">59</td>
+<td align="right">0</td>
+<td align="right">208662</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">CA1112-A40</td>
+<td align="right">0</td>
+<td align="right">84220</td>
+<td align="right">0</td>
+<td align="right">12</td>
+<td align="right">0</td>
+<td align="right">84220</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">CA1113-A40</td>
+<td align="right">112620</td>
+<td align="right">2390368</td>
+<td align="right">8</td>
+<td align="right">1099</td>
+<td align="right">112620</td>
+<td align="right">2390368</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">CA1114-A40</td>
+<td align="right">49153</td>
+<td align="right">6635504</td>
+<td align="right">4</td>
+<td align="right">2583</td>
+<td align="right">49153</td>
+<td align="right">6635504</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">CA1115-A40</td>
+<td align="right">17844</td>
+<td align="right">62734</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">17844</td>
+<td align="right">62734</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">CO1106-A40</td>
+<td align="right">1747</td>
+<td align="right">63464</td>
+<td align="right">0</td>
+<td align="right">42</td>
+<td align="right">1747</td>
+<td align="right">63422</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">CO1107-A40</td>
+<td align="right">2846</td>
+<td align="right">930471</td>
+<td align="right">3</td>
+<td align="right">46</td>
+<td align="right">2846</td>
+<td align="right">930471</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">CO1108-B39</td>
+<td align="right">35731</td>
+<td align="right">206466</td>
+<td align="right">3</td>
+<td align="right">7</td>
+<td align="right">35731</td>
+<td align="right">206466</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">CO1109-A40</td>
+<td align="right">89</td>
+<td align="right">73694</td>
+<td align="right">0</td>
+<td align="right">12</td>
+<td align="right">89</td>
+<td align="right">73694</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">CO1110-A40</td>
+<td align="right">49</td>
+<td align="right">4954</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">49</td>
+<td align="right">4954</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">CO1114-A40</td>
+<td align="right">77</td>
+<td align="right">52637</td>
+<td align="right">0</td>
+<td align="right">12</td>
+<td align="right">77</td>
+<td align="right">52637</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">FL1105-A40</td>
+<td align="right">18569</td>
+<td align="right">2888348</td>
+<td align="right">57</td>
+<td align="right">21243</td>
+<td align="right">18512</td>
+<td align="right">2867105</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">GA1105-A40</td>
+<td align="right">7199</td>
+<td align="right">453800</td>
+<td align="right">13</td>
+<td align="right">614</td>
+<td align="right">7186</td>
+<td align="right">453186</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">GA1107-A40</td>
+<td align="right">8</td>
+<td align="right">97332</td>
+<td align="right">0</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="right">97332</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="left">GA1109-C40</td>
+<td align="right">2201</td>
+<td align="right">12151</td>
+<td align="right">4</td>
+<td align="right">7</td>
+<td align="right">2201</td>
+<td align="right">12151</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="left">NC1103-A40</td>
+<td align="right">0</td>
+<td align="right">466492</td>
+<td align="right">0</td>
+<td align="right">398</td>
+<td align="right">0</td>
+<td align="right">466094</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="left">NC1105-A40</td>
+<td align="right">0</td>
+<td align="right">110710</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">110710</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">NC1106-A40</td>
+<td align="right">16579</td>
+<td align="right">385708</td>
+<td align="right">0</td>
+<td align="right">20</td>
+<td align="right">16579</td>
+<td align="right">385708</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="left">NC1107-B40</td>
+<td align="right">16892</td>
+<td align="right">486199</td>
+<td align="right">0</td>
+<td align="right">1075</td>
+<td align="right">16892</td>
+<td align="right">486199</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="left">NC1108-A40</td>
+<td align="right">8872</td>
+<td align="right">522083</td>
+<td align="right">0</td>
+<td align="right">39</td>
+<td align="right">8872</td>
+<td align="right">522083</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="left">NC1109-A40</td>
+<td align="right">15140</td>
+<td align="right">1322566</td>
+<td align="right">0</td>
+<td align="right">150</td>
+<td align="right">15140</td>
+<td align="right">1322566</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="left">NC1110-A40</td>
+<td align="right">0</td>
+<td align="right">65805</td>
+<td align="right">0</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">65805</td>
+</tr>
+<tr class="odd">
+<td align="right">25</td>
+<td align="left">OH1106-A40</td>
+<td align="right">22048</td>
+<td align="right">2891452</td>
+<td align="right">910</td>
+<td align="right">44797</td>
+<td align="right">21138</td>
+<td align="right">2846655</td>
+</tr>
+<tr class="even">
+<td align="right">26</td>
+<td align="left">OH1107-A40</td>
+<td align="right">1147</td>
+<td align="right">241801</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1147</td>
+<td align="right">241801</td>
+</tr>
+<tr class="odd">
+<td align="right">27</td>
+<td align="left">OH1108-A40</td>
+<td align="right">56058</td>
+<td align="right">2834094</td>
+<td align="right">0</td>
+<td align="right">34</td>
+<td align="right">56058</td>
+<td align="right">2834094</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="left">OH1110-B40</td>
+<td align="right">12447</td>
+<td align="right">243845</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">12447</td>
+<td align="right">243845</td>
+</tr>
+<tr class="odd">
+<td align="right">29</td>
+<td align="left">OH1111-A40</td>
+<td align="right">1095</td>
+<td align="right">242735</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1095</td>
+<td align="right">242735</td>
+</tr>
+<tr class="even">
+<td align="right">30</td>
+<td align="left">TX1113-A40</td>
+<td align="right">394</td>
+<td align="right">385529</td>
+<td align="right">0</td>
+<td align="right">6926</td>
+<td align="right">394</td>
+<td align="right">378603</td>
+</tr>
+<tr class="odd">
+<td align="right">31</td>
+<td align="left">TX1116-A40</td>
+<td align="right">0</td>
+<td align="right">50</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td align="right">32</td>
+<td align="left">TX1119-A40</td>
+<td align="right">36</td>
+<td align="right">356593</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">36</td>
+<td align="right">356593</td>
+</tr>
+<tr class="odd">
+<td align="right">33</td>
+<td align="left">TX1120-A40</td>
+<td align="right">1774</td>
+<td align="right">238414</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1774</td>
+<td align="right">238414</td>
+</tr>
+<tr class="even">
+<td align="right">34</td>
+<td align="left">TX1122-A40</td>
+<td align="right">9</td>
+<td align="right">12347</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">9</td>
+<td align="right">12347</td>
+</tr>
+</tbody>
+</table>
 <p>Broadband Initiative Project OH1106-A40 is one of the few project areas that has sufficient data from this specific CoreLogic dataset, so our analysis will be based upon the properties and their prices and characteristics within this project area. The OH1106-A40 project shapefile and plot of properties inside (green) and outside (orange) are presented below.</p>
 <p><img src="www/Rplot.png" alt="Rplot" style="width:60.0%" /></left> <img src="www/Website/map_before.png" alt="Map Before" style="width:60.0%" /></right></p>
 </div>
