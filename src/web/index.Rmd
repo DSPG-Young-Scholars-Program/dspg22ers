@@ -17,10 +17,10 @@ The sponsor of this project is the USDA Economic Research Service, and our stake
 
 # **Method**
 ##Hedonic Regression Model 
-x
+Housing prices were modelled with a hedonic regression model. Different characteristics of each property such as square footage, bedrooms, and bathrooms were evaluated for the effect on house prices so that we could isolate the effects of the program.
 
 ##Difference in Differences 
-x
+To illustrate the effects of the program on internet speeds and housing prices, we implemented difference in differences by including indicators for time elapsed, position relative to project border, and the interaction between the two.
   
 
 
